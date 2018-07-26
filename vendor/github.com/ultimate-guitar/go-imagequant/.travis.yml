@@ -1,0 +1,21 @@
+go_import_path: github.com/ultimate-guitar/go-imagequant
+
+language: go
+go:
+  - 1.9.x
+  - tip
+
+os:
+  - linux
+dist: trusty
+sudo: false
+
+matrix:
+  allow_failures:
+    - go: tip
+
+gobuild_args: -v
+
+script:
+  - cd "${TRAVIS_BUILD_DIR}"
+  - go build ./...
